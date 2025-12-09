@@ -2,6 +2,8 @@
 {% block title %}Create new blog post {% endblock %}
 {% block content %}
 
+{% if user.is_authenticated %}
+
 <h1>Add Post</h1>
 <br/>
 <div class="mb-3">
@@ -14,4 +16,10 @@
 </div>
 
 
+{% else %}
+<p>Please <a href="{% url 'login' %}">login</a></p>
+<hr>
+<p>or please <a href="{% url 'register' %}">register</a></p>
+
+{% endif %}
 {% endblock %}
