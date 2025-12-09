@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap RTL -->
+    <link rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css">
+
+    <style>
+      /* Force content area to be left-aligned */
+      .content-wrapper {
+        text-align: left !important;
+        direction: ltr !important;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <title>{% block title %} My Blog {% endblock %} </title>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid d-flex justify-content-between">
+
+    <!-- RIGHT SIDE (because page is RTL) -->
+    
+
+    <!-- LEFT SIDE -->
+    <a class="nav-link text-white" href="#">Link</a>
+    <a class="navbar-brand" href="{% url 'home' %}">My Blog</a>
+
+  </div>
+</nav>
+
+
+    <br/>
+
+    <div class="container mt-4 content-wrapper">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
