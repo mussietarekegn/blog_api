@@ -13,6 +13,3 @@ class UserRegisterView(generic.CreateView):
 def logout_view(request):
     logout(request)
     return redirect('home')
-
-def logged_out_view(request):
-    return render(request,'logged_out.html')
